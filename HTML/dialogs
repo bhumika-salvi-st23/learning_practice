@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Dialog Example</title>
+    <style>
+        dialog {
+            padding: 20px;
+            border: 1px solid #000000;
+            border-radius:10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Simple Dialog Box Example</h2>
+
+    <button onclick="openDialog()">Open Dialog</button>
+
+    <dialog id="myDialog">
+        <form method="dialog">
+            <p>Enter your name:</p>
+            <input type="text" id="nameInput" placeholder="Your name">
+            <br><br>
+            <button type="button" onclick="showGreeting()">Submit</button>
+            <button type="submit">Close</button>
+        </form>
+    </dialog>
+
+    <p id="output"></p>
+
+    <script>
+        function openDialog() {
+            document.getElementById("myDialog").showModal();
+        }
+
+        function showGreeting() {
+            let name = document.getElementById("nameInput").value;
+            document.getElementById("output").innerText = "Hello, " + name + "!";
+            document.getElementById("myDialog").close();
+        }
+    </script>
+
+</body>
+
+</html>

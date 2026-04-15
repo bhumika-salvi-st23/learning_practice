@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attributes</title>
+</head>
+
+<body>
+    <h1>Example of boolean attributes :</h1>
+    <h2>form</h2>
+    <form>
+        <input type="text" placeholder="enter your name  " autofocus required>
+        <br><br>
+
+        <input type="text" value="you cannot edit me " readonly>
+        <br><br>
+
+        <input type=" text" placeholder="disable input" disabled>
+        <br><br>
+
+        <label>
+            <input type="checkbox" checked>
+            I agree (by default)
+        </label>
+        <br><br>
+
+        <select multiple>
+            <option selected>india</option>
+            <option>usa</option>
+            <option>uk</option>
+        </select>
+        <br><br>
+
+        <button type="submit">submit</button>
+    </form>
+
+    <hr>
+    <h2>media demo </h2>
+
+    <video width="300" controls autoplay muted loop>
+        <source src="sample.mp4" type="video/mp4">
+    </video>
+    <hr>
+    <iframe
+        src="https://i.ytimg.com/vi/QEoU5Kaz9lQ/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCsSz6N9A76QcvtbGGV-ynXaxvWzA"
+        height="300px" width="200px">
+
+    </iframe>
+    <hr>
+
+    <h2>Inert Example</h2>
+
+<div inert>
+        <p>This section is inert (disabled interaction)</p>
+        <button>Can't click me</button>
+    </div>
+
+</body>
+
+</html>
