@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mutimedia examples</title>
+    <style>
+        #bgVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <!--image-->
+    <h1>simple --image--</h1>
+    <img src="../HTML/pc.png" alt="Company Logo" role="img"><br>
+    <br>
+    <h1>responshive Image</h1>
+    <picture>
+        <source srcset="../HTML/pc2.jpeg" media="(max-width: 600px)">
+        <source srcset="../HTML/pc2.jpeg" media="(min-width: 601px)">
+        <img src="../HTML/pc2.jpeg" alt="Responsive Image">
+    </picture><br><br>
+
+
+    <!--audio-->
+    <h1>audio</h1>
+    <audio controls>
+        <source src="song.mp3" type="audio/mpeg">
+        Your browser does not support audio.
+    </audio><br><br>
+
+    <!--video-->
+    <h1>video</h1>
+
+    <iframe width="400" height="225" src="https://www.youtube.com/embed/EerdGm-ehJQ"     allowfullscreen>
+    </iframe>
+</body>
+
+</html>

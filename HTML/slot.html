@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Component with Slots</title>
+</head>
+
+<body>
+
+  <!-- 1. Template (Blueprint) -->
+  <template id="my-card">
+    <style>
+      .card {
+        border: 1px solid #ddd;
+        padding: 12px;
+        width: 220px;
+        border-radius: 8px;
+        font-family: Arial, sans-serif;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      }
+
+      h3 {
+        margin: 0 0 8px;
+        color: #333;
+      }
+
+      p {
+        margin: 0;
+        color: gray;
+      }
+    </style>
+
+    <div class="card">
+      <h3>
+        <slot name="title">Default Title</slot>
+      </h3>
+
+      <p>
+        <slot name="desc">Default Description</slot>
+      </p>
+    </div>
+  </template>
+
+  <!-- 2. Web Component Definition -->
+  <script>
+    class MyCard extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        // prevent duplicate rendering
+        if (this.shadowRoot) return;
+
+        const template = document.getElementById("my-card");
+        const shadow = this.attachShadow({ mode: "open" });
+
+        shadow.appendChild(template.content.cloneNode(true));
+      }
+    }
+
+    customElements.define("my-card", MyCard);
+  </script>
+
+  <!-- 3. Using the component -->
+  <my-card>
+    <span slot="title">Hello World</span>
+    <span slot="desc">This is slot content example</span>
+  </my-card>
+
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Interaction Demo</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+
+    .box {
+      border: 2px solid #333;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+
+    .dim {
+      background: #f0f0f0;
+    }
+
+    button {
+      margin: 5px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>🔥 HTML Interaction Features Demo</h2>
+
+  <!-- 1. autofocus -->
+  <input type="text" placeholder="I am autofocus input" autofocus>
+  <br><br>
+
+  <!-- 2. contenteditable -->
+  <div class="box" contenteditable="true">
+    ✍️ You can edit this text (contenteditable)
+  </div>
+
+  <!-- 3. normal interactive elements -->
+  <button onclick="alert('Normal button clicked')">Normal Button</button>
+
+  <!-- 4. disabled button -->
+  <button disabled>Disabled Button</button>
+
+  <br><br>
+
+  <!-- 5. tabindex example -->
+  <button tabindex="2">Tab Index 2</button>
+  <button tabindex="1">Tab Index 1</button>
+  <button tabindex="-1">Skipped in Tab (tabindex -1)</button>
+
+  <br><br>
+
+  <!-- 6. inert section -->
+  <div id="inertBox" class="box dim" inert>
+    <h3>This section is INERT</h3>
+    <button onclick="alert('Should NOT work')">Click Me (Inert)</button>
+    <a href="https://google.com" target="_blank">Google Link (Inert)</a>
+  </div>
+
+  <!-- Control buttons -->
+  <button onclick="makeActive()">Make Inert Active</button>
+  <button onclick="makeInert()">Make Active Inert</button>
+
+  <script>
+    const inertBox = document.getElementById("inertBox");
+
+    // Remove inert → make interactive
+    function makeActive() {
+      inertBox.removeAttribute("inert");
+      inertBox.style.background = "#e0ffe0";
+      alert("Section is now ACTIVE");
+    }
+
+    // Add inert → block interaction
+    function makeInert() {
+      inertBox.setAttribute("inert", "");
+      inertBox.style.background = "#f0f0f0";
+      alert("Section is now INERT");
+    }
+  </script>
+
+</body>
+
+</html>
